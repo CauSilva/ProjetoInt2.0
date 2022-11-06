@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root{
+    --padrao:#261313;
+    --black:#0c0c0c;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --box-shadow2:0 .5rem 1rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --light-black:#777;
+    --main-container-width: 1280px;
+    --spacing-0: 0px;
+    --spacing-1: 8px;
+    --spacing-2: 16px;
+    --spacing-3: 24px;
+    --spacing-4: 32px;
+    --spacing-5: 40px;
+    --spacing-6: 48px;
+    --spacing-7: 56px;
+    --spacing-8: 64px;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body{
+    background:#eee;
+}
+
+section{
+    padding:2rem 9%;
+}
+
+.heading{
+    text-align: center;
+    padding:2rem 0;
+    padding-bottom: 3rem;
+    
+    color:var(--black);
+}
+
+.heading span{
+    background: var(--padrao);
+    color:#fff;
+    display: inline-block;
+    padding:.5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border:.2rem solid var(--padrao);
+    color:var(--black);
+    cursor: pointer;
+    background: none;
+}
+
+.btn:hover{
+    background: var(--padrao);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:#fff;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:var(--black);
+}
+
+.header .logo i{
+    color:var(--padrao);
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:var(--black);
+}
+
+.header .navbar a:hover{
+    border-bottom: 1.5px solid;
+    color: var(--padrao);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--padrao);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header .search-form{
+    position: absolute;
+    top:110%; right:-110%;
+    width: 50rem;
+    height:5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.header .search-form.active{
+    right:2rem;
+    transition: .4s linear;
+}
+
+.header .search-form input{
+    height:100%;
+    width:100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:0 1.5rem;
+}
+
+.header .search-form label{
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color:var(--black);
+    cursor: pointer;
+}
+
+.header .search-form label:hover{
+    color:var(--padrao);
+}
+
+.header .login-form{
+    position: absolute;
+    top:110%; right:-110%;
+    width:35rem;
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+}
+
+.header .login-form.active{
+    right:2rem;
+    transition: .4s linear;
+}
+
+.header .login-form h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.header .login-form .box{
+    width: 100%;
+    margin:.7rem 0;
+    background:#eee;
+    border-radius: .5rem;
+    padding:1rem;
+    font-size: 1.6rem;
+    color:var(--black);
+    text-transform: none;
+}
+
+.header .login-form p{
+    font-size: 1.4rem;
+    padding:.5rem 0;
+    color:var(--light-color);
+}
+
+.header .login-form p a{
+    color:var(--black);
+    text-decoration: underline;
+}
+
+@media (min-width:991px){
+    .promocao{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+    .promocao{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (min-width:768px){
+    .heading{
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .heading h1{
+        font-size: 4rem;
+    }
+
+    .header .search-form{
+        width:90%;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #fff;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+    .promocao{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+}
+
+@media(min-width: 600px){
+.secao-promocao {
+    padding-left: var(--spacing-3);
+    padding-right: var(--spacing-3);
+}
+
+}
+
+@media (max-width:450px){
+    
+
+    html{
+        font-size: 70%;
+    }
+
+    .heading{
+        padding-bottom: 0rem;
+    }
+
+    .footer{
+        text-align: center;
+    }
+
+    .footer .box-container .box .payment-img{
+        margin: 2rem auto;
+    }
+    
+    .body{
+        padding-bottom: 12px;
+    }
+
+    .promocao{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .data-viagem{
+        width: 7%;
+    }
+    .data-viagem img{
+        width: 50%;
+    }
+
+    .login-form.active{
+        width: 90%;
+    }
+}
+
+.body {
+    max-width: 100%;
+    padding-top: 5rem;
+    padding-bottom:5rem;
+    background-image: url(../images/rio-de-janeiro-capa2019-01.jpg);
+    background-color: hsla(0, 0%, 0%, 0.537);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    background-position: 100%;
+}
+
+.heading{
+    padding-top: 10rem;
+}
+
+.titulo{
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover !important;
+    background-position: 100%, 100%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color:#261313b0;
+}
+
+.heading h1{
+    color: #ffffff;
+}
+
+.heading-title{
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 6rem;
+    text-transform: uppercase;
+    color:var(--black);
+ }
+
+.secao-promocao{
+    box-sizing: border-box;
+    width: 80%;
+    max-width: var(--main-container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-1);
+    padding-right: var(--spacing-1);
+}
+
+.promo {
+    padding: var(--spacing-4) 0;
+}
+
+.promocao {
+    display: grid;
+    grid-gap: var(--spacing-2);
+    gap: 2rem;
+}
+
+img.imagem-promo{
+    display: block;
+    width: 100%;
+    object-position: bottom right;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.promo .promocao .promocao-imagem{
+    display: none;
+    background-color: #fff;
+    box-shadow: var(--box-shadow2);
+}
+
+.promocao-imagem .imagem:hover img{
+    transform: scale(1.1);
+ }
+
+.imagem{
+    position: relative;
+    height: 25rem;
+    overflow: hidden;
+}
+.conteudo{
+    position: absolute;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: fit-content(70%) fit-content(40%);
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+}
+
+.conteudo-promo{
+    text-align: center;
+}
+
+.conteudo-promo p{
+    font-size: 1.4rem;
+    color:var(--light-black);
+    line-height: 2;
+    padding:1rem 0;
+}
+
+.conteudo-promo .titulo-conteudo-promo{
+        font-size: 1.5rem;
+        color:var(--black);
+}
+
+.taxa-zero{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.taxa-zero-texto{
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #261313;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.texto-taxa{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: inherit;
+    font-weight: 10px;
+    text-decoration: none;
+    font-size: 10px;
+    line-height: 1.4;
+    word-break: normal;
+}
+.porcentagem{
+    background-color: rgb(184, 244, 194);
+    display: flex;
+    width: auto;
+    padding: 5px;
+    box-shadow: var(--box-shadow);
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.conteudo-promo{
+    padding: 10px;
+    background-color: #fff;
+}
+
+.botao-saiba-mais{
+        align-items: center;
+        display: inline-block;
+     
+}
+
+.botao input{
+    background-color: transparent;
+    width: 100%;
+    border-radius: 10px;
+    color: var(--padrao);
+    border-radius: .5rem;
+    border:.2rem solid var(--padrao);
+    cursor: pointer;
+    padding:.8rem 3rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+
+}
+
+.botao:hover input{
+    background-color: #261313;
+    color: #fff;
+}
+
+
+.secao-promocao .promo .promocao a.promocao-imagem:nth-child(1),
+.secao-promocao .promo .promocao a.promocao-imagem:nth-child(2),
+.secao-promocao  .promo .promocao a.promocao-imagem:nth-child(3),
+.secao-promocao  .promo .promocao a.promocao-imagem:nth-child(4),
+.secao-promocao  .promo .promocao a.promocao-imagem:nth-child(5),
+.secao-promocao  .promo .promocao a.promocao-imagem:nth-child(6){
+    display: inline-block;
+ }
+.promo .load-more{
+    text-align: center;
+    margin-top: 2rem;
+ }
